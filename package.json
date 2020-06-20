@@ -2,20 +2,32 @@
   "name": "alfred-vpnutil",
   "version": "0.1.0",
   "description": "VPN util alfred workflow",
+  "license": "MIT",
+  "repository": "github:zillding/alfred-vpnutil",
+  "author": {
+    "name": "Zill Ding",
+    "email": "zilldzy@gmail.com"
+  },
   "engines": {
     "node": ">=12"
   },
-  "main": "index.js",
   "scripts": {
     "postinstall": "alfy-init",
     "preuninstall": "alfy-cleanup"
   },
+  "files": [
+    "index.js",
+    "info.plist",
+    "vpnutil"
+  ],
   "keywords": [
     "alfred",
-    "vpn"
+    "alfred-workflow",
+    "workflow",
+    "vpn",
+    "util",
+    "alfy"
   ],
-  "author": "zillding",
-  "license": "ISC",
   "dependencies": {
     "alfy": "^0.9.1"
   }
