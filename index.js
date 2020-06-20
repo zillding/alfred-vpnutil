@@ -9,7 +9,12 @@ const actions = {
   Disconnected: "start",
 };
 
-const strList = (await exec(`${bin} list`)).stdout.trim().split("\n");
+let strList = alfy.cache.get("data");
+if (!strList) {
+  strList = (await exec(`${bin} list`)).stdout.trim().split("\n");
+  alfy.cache.set("data", strList, { maxAge: 5000 });
+}
+
 const list = ["Connected", "Disconnected"]
   .map((status) =>
     strList
