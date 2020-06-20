@@ -2,7 +2,7 @@ const util = require("util");
 const exec = util.promisify(require("child_process").exec);
 const alfy = require("alfy");
 
-const bin = (await exec("which vpnutil")).stdout.trim();
+const bin = "./vpnutil";
 
 const actions = {
   Connected: "stop",
