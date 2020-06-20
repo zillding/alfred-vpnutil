@@ -1,0 +1,22 @@
+{
+  "name": "alfred-vpnutil",
+  "version": "0.1.0",
+  "description": "VPN util alfred workflow",
+  "engines": {
+    "node": ">=12"
+  },
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "alfy-init",
+    "preuninstall": "alfy-cleanup"
+  },
+  "keywords": [
+    "alfred",
+    "vpn"
+  ],
+  "author": "zillding",
+  "license": "ISC",
+  "dependencies": {
+    "alfy": "^0.9.1"
+  }
+}
