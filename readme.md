@@ -2,6 +2,8 @@
 
 > [Alfred](https://www.alfredapp.com) workflow to list configured VPN profiles and connect to/disconnect from a selected one (support IKEv2 service)
 
+Built-in Mac CLI tools (`scutil` & `networksetup`) do not work with IKEv2 services at the moment. Refer to [https://blog.timac.org/2018/0719-vpnstatus/](https://blog.timac.org/2018/0719-vpnstatus/) for more details. Special treatment is requried to support IKEv2 services. This workflow solves the problem.
+
 ## Install
 
 ```bash
