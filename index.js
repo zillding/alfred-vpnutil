@@ -4,9 +4,9 @@ const alfy = require("alfy");
 
 const bin = "./vpnutil";
 
-const actions = {
-  Connected: "stop",
-  Disconnected: "start",
+const m = {
+  Connected: ["stop", "icon-connected.png"],
+  Disconnected: ["start", "icon-disconnected.png"],
 };
 
 let strList = alfy.cache.get("data");
@@ -25,7 +25,7 @@ const list = ["Connected", "Disconnected"]
           s,
           name,
           status,
-          cmd: `${bin} ${actions[status]} '${name}'`,
+          cmd: `${bin} ${m[status][0]} '${name}'`,
         };
       })
   )
@@ -35,6 +35,7 @@ const items = alfy.inputMatches(list, "s").map((o) => ({
   title: o.name,
   subtitle: o.status,
   arg: o.cmd,
+  icon: { path: m[o.status][1] },
 }));
 
 alfy.output(items);
