@@ -36,7 +36,18 @@ function getIcon(status) {
 
 let strList = alfy.cache.get("data");
 if (!strList) {
-  strList = (await exec(`${bin} list`)).stdout.trim().split("\n");
+  const { stdout, stderr } = await exec(`${bin} list`);
+
+  if (stderr.trim()) {
+    return alfy.output([
+      {
+        title: "Oops, something is wrong.",
+        subtitle: stderr.slice(stderr.trim().indexOf("]") + 1),
+      },
+    ]);
+  }
+
+  strList = stdout.trim().split("\n");
   alfy.cache.set("data", strList, { maxAge: 5000 });
 }
 
