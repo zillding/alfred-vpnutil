@@ -30,6 +30,6 @@
     "alfy"
   ],
   "dependencies": {
-    "alfy": "^0.9.1"
+    "alfy": "^3.1.0"
   }
 }
